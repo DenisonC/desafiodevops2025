@@ -1,0 +1,149 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": null,
+    "title": "DevOps 2025 - Apps Flask e Node.js",
+    "timezone": "browser",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Requisi\u00e7\u00f5es - Flask (/time)",
+        "targets": [
+          {
+            "expr": "flask_http_request_total{path=\"/time\"}",
+            "legendFormat": "Flask /time",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Dura\u00e7\u00e3o M\u00e9dia - Flask (/time)",
+        "targets": [
+          {
+            "expr": "rate(flask_http_request_duration_seconds_sum{path=\"/time\"}[1m]) / rate(flask_http_request_duration_seconds_count{path=\"/time\"}[1m])",
+            "legendFormat": "Flask /time - m\u00e9dia",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Requisi\u00e7\u00f5es - Node (/time)",
+        "targets": [
+          {
+            "expr": "time_requests_total",
+            "legendFormat": "Node /time",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Uso de CPU (Node Exporter)",
+        "targets": [
+          {
+            "expr": "rate(node_cpu_seconds_total{mode!=\"idle\"}[1m])",
+            "legendFormat": "CPU {{cpu}}",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Erros HTTP - Flask",
+        "targets": [
+          {
+            "expr": "flask_http_request_total{status=~\"4..|5..\"}",
+            "legendFormat": "Erro {{status}}",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 16,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Uso de Disco (Node Exporter)",
+        "targets": [
+          {
+            "expr": "node_filesystem_avail_bytes{mountpoint=\"/\"}",
+            "legendFormat": "Disco dispon\u00edvel",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 16,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "M\u00e9tricas Redis - Uso de mem\u00f3ria",
+        "targets": [
+          {
+            "expr": "redis_memory_used_bytes",
+            "legendFormat": "Redis usado",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 24,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "M\u00e9tricas Redis - Conex\u00f5es",
+        "targets": [
+          {
+            "expr": "redis_connected_clients",
+            "legendFormat": "Conex\u00f5es ativas",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 24,
+          "w": 12,
+          "h": 8
+        }
+      }
+    ],
+    "schemaVersion": 27,
+    "version": 1
+  },
+  "overwrite": true
+}
