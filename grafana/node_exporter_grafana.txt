@@ -1,0 +1,24 @@
+Métricas do Node Exporter
+
+CPU - uso por núcleo (sem modo idle)
+rate(node_cpu_seconds_total{mode!="idle"}[1m])
+Mostra a atividade da CPU por núcleo, ignorando o tempo ocioso.
+
+Memória disponível
+node_memory_MemAvailable_bytes
+Total de memória ainda disponível para uso (RAM livre + buffers/cache)
+
+Memória total
+node_memory_MemTotal_bytes
+
+Memória usada:
+(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)
+
+Disco disponível (no sistema de arquivos raiz)
+node_filesystem_avail_bytes{mountpoint="/"}
+
+Disco total
+node_filesystem_size_bytes{mountpoint="/"}
+
+Disco usado:
+node_filesystem_size_bytes{mountpoint="/"} - node_filesystem_avail_bytes{mountpoint="/"}

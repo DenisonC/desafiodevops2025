@@ -1,0 +1,38 @@
+Principais métricas que o Flask Exporter expõe
+
+flask_http_request_total---Total de requisições HTTP por método/status
+flask_http_request_duration_seconds---Duração das requisições (histograma)
+flask_http_request_exceptions_total---Quantidade de exceções ocorridas
+process_resident_memory_bytes---Uso de memória do processo Flask
+process_cpu_seconds_total---Uso de CPU do processo Flask
+
+O que vamos montar no painel:
+Total de requisições por rota e status
+
+Duração média das requisições
+
+Quantidade de erros
+
+Uso de memória
+
+Uso de CPU
+
+Selecione Data Source: Prometheus
+
+2. Consultas para os gráficos
+📈 Total de requisições:
+flask_http_request_total
+Use legenda: {{method}} {{path}} {{status}}
+
+📊 Duração média das requisições:
+rate(flask_http_request_duration_seconds_sum[1m]) / rate(flask_http_request_duration_seconds_count[1m])
+Use legenda: Duração média (último 1m)
+
+❌ Total de exceções:
+flask_http_request_exceptions_total
+
+💾 Uso de memória:
+process_resident_memory_bytes
+
+⚙️ Uso de CPU:
+process_cpu_seconds_total

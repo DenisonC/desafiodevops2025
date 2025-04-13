@@ -1,0 +1,28 @@
+Métrica customizada da sua aplicação
+time_requests_total
+Total de requisições para /time no app Node.js
+Use increase(time_requests_total[5m]) para ver a evolução.
+
+Métricas padrão do processo Node.js
+⚙️ CPU utilizada
+process_cpu_seconds_total
+CPU usada acumulada (em segundos) pelo processo Node.js
+
+Memória RAM usada pelo processo
+process_resident_memory_bytes
+RAM utilizada no momento
+
+Tamanho da heap utilizada
+nodejs_heap_size_used_bytes
+
+Tamanho total da heap disponível
+nodejs_heap_size_total_bytes
+
+Event Loop Lag (latência do event loop)
+nodejs_eventloop_lag_seconds
+
+Handles ativos (como sockets abertos)
+nodejs_active_handles_total
+
+Recursos ativos (como conexões TCP, timers, etc.)
+nodejs_active_resources_total

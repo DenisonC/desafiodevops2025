@@ -1,0 +1,28 @@
+Métricas principais do Redis Exporter
+Uso de memória
+redis_memory_used_bytes
+Mostra quanto o Redis está utilizando de memória (em bytes).
+Unidade no Grafana: bytes
+
+Conexões ativas
+redis_connected_clients
+Número atual de conexões de clientes ao Redis.
+Unidade: short
+
+Comandos processados
+redis_commands_processed_total
+Contador total de comandos executados desde o início.
+Use com rate():
+rate(redis_commands_processed_total[1m])
+
+Hits e Misses no cache
+rate(redis_keyspace_hits_total[1m])
+rate(redis_keyspace_misses_total[1m])
+Ótimo para calcular cache hit ratio.
+
+Cache Hit Ratio (%):
+(rate(redis_keyspace_hits_total[1m]) / (rate(redis_keyspace_hits_total[1m]) + rate(redis_keyspace_misses_total[1m]))) * 100
+
+Latência de comando
+redis_command_duration_seconds
+Se habilitado com --latency-metrics, mostra a duração dos comandos.
