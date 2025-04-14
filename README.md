@@ -45,7 +45,7 @@ docker-compose up --build
 
 ### Aplicações disponíveis:
 
-- Flask: http://localhost:5001/hrllo
+- Flask: http://localhost:5001/hello
 - Flask: http://localhost:5001/time
 - Node.js: http://localhost:3000/hello
 - - Node.js: http://localhost:3000/time
