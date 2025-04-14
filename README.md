@@ -45,8 +45,10 @@ docker-compose up --build
 
 ### Aplicações disponíveis:
 
-- Flask: http://localhost:5001
-- Node.js: http://localhost:3000
+- Flask: http://localhost:5001/hrllo
+- Flask: http://localhost:5001/time
+- Node.js: http://localhost:3000/hello
+- - Node.js: http://localhost:3000/time
 - Prometheus: http://localhost:9090
 - Grafana: http://localhost:3001 (login: `admin` / `admin`)
 
