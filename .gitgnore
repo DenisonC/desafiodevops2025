@@ -1,0 +1,29 @@
+# Logs de execução
+logs/
+**/output.log
+
+# Pycache e arquivos Python
+__pycache__/
+*.pyc
+
+# Node modules
+node_modules/
+
+# Arquivos de configuração pessoais
+.env
+
+# Volumes Docker (se for montado fora)
+volumes/
+*.db
+*.sqlite
+
+# Artefatos de build
+*.zip
+*.tar.gz
+
+# Dashboards exportados (se preferir manter fora do git)
+# dashboard-*.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
